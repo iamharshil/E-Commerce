@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/e-commerce-app")
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("[Server]: Database Connected..."));

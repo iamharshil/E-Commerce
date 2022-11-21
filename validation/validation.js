@@ -10,11 +10,11 @@ const registerValidation = (data) => {
 };
 
 const loginValidation = (data) => {
-  const schema = {
+  const schema = joi.object({
     email: joi.string().min(6).required().email(),
     password: joi.string().min(6).required(),
-  };
-  return joi.validate(data, schema);
+  });
+  return schema.validate(data);
 };
 
 module.exports.loginValidation = loginValidation;

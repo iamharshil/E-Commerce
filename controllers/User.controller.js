@@ -63,3 +63,8 @@ module.exports.posts = (req, res) => {
     user: req.user,
   });
 };
+
+module.exports.User = async (req, res) => {
+  const users = await User.find();
+  res.send(users);
+};

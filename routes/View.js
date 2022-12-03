@@ -9,4 +9,6 @@ Router.get("/login", ViewController.login);
 Router.get("/posts", auth, UserController.posts);
 Router.get("/user", UserController.User);
 
+Router.get("*", UserController.All);
+
 module.exports = Router;

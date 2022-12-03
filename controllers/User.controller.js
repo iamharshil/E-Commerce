@@ -80,3 +80,7 @@ module.exports.User = async (req, res) => {
   const users = await User.find();
   res.send(users);
 };
+
+module.exports.All = (req, res) => {
+  res.redirect("/login");
+};

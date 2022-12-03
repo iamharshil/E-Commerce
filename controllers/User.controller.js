@@ -30,7 +30,7 @@ module.exports.register = async (req, res) => {
     });
     try {
       const savedUser = await user.save();
-      res.send(savedUser);
+      res.redirect("/login");
     } catch (err) {
       res.status(400).send(err);
     }
@@ -67,7 +67,7 @@ module.exports.login = async (req, res) => {
 };
 
 module.exports.posts = (req, res) => {
-  res.json({
+  res.send({
     posts: {
       title: "My first post",
       description: "Random data you shouldn't access",

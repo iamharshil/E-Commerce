@@ -4,7 +4,6 @@ const cors = require("cors");
 module.exports = function (req, res, next) {
   // const token = req.header("auth-token");
   const token = req.cookies["auth-token"];
-  console.log(token);
   if (!token) return res.status(401).send("Access Denied");
 
   try {
